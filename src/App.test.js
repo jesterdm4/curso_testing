@@ -30,4 +30,22 @@ test('initial conditions', ()=> {
   //check taht the checkbox starts unchecked
   const checkbox = screen.getByRole('checkbox');
   expect(checkbox).not.toBeChecked();
+
+  //click checkBox
+  fireEvent.click(checkbox);
+
+  //check taht the checkbox is checked
+  expect(checkbox).toBeChecked();
+
+  //check that the button its unabled
+  expect(colorButton).toBeDisabled();
+
+  //click checkBox
+  fireEvent.click(checkbox);
+
+    //check taht the checkbox its not checked
+    expect(checkbox).not.toBeChecked();
+
+  //check that the button its unabled
+  expect(colorButton).toBeEnabled();
 })
