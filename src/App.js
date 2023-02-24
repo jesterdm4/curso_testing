@@ -13,11 +13,17 @@ function App() {
        <button style={{backgroundColor: buttonColor}}
        onClick={()=> setButtonColor(newButtonColor)}
        disabled={disabled}
+       data-testid="buttonColor1"
        > 
-        change to {newButtonColor}
+        {buttonColor === 'gray' ? 'disabled' : `change to ${newButtonColor}` } 
        </button>
 
-        <input type="checkbox" onClick={()=> setDisabler(disabled)}/>
+        <input type="checkbox" onClick={()=> {
+          setDisabler(disabled); 
+          const bgColor = disabled ? 'red' : 'gray';
+          setButtonColor(bgColor)}}
+          data-testid="checkbox1"
+          />
 
     </div>
   );
