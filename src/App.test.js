@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
-test('button has correct initial right red color, and updates when clicked', () => {
+test("button has correct initial right red color, and updates when clicked", () => {
   render(<App />);
 
   //check if the text of the button say change to blue
